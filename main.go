@@ -1,9 +1,8 @@
+// main.go
 package main
 
-import (
-	"todo/functions"
-)
+import "todo/cmd"
 
 func main() {
-    functions.Test()
+	cmd.Execute()
 }
