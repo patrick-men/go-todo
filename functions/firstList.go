@@ -3,7 +3,6 @@ package functions
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/user"
@@ -39,6 +38,7 @@ func ListCheck() (b bool) {
 	_, err = os.Stat(filePath)
 	if err != nil {
 
+		
 		// Create directory for tool
 		err = os.MkdirAll(dirPath, 0755)
 		if err != nil {
@@ -55,7 +55,7 @@ func ListCheck() (b bool) {
 
 		// Create state file, and write "default" to it
 		data := []byte("default.json\n")
-		err = ioutil.WriteFile(stateFile, data, 0644)
+		err = os.WriteFile(stateFile, data, 0644)
 		if err != nil {
 			fmt.Println("Error writing to state file:", err)
 			return
@@ -77,7 +77,7 @@ func ListCheck() (b bool) {
 		}
 
 		// Write to file
-		err = ioutil.WriteFile(filePath, jsonData, 0644)
+		err = os.WriteFile(filePath, jsonData, 0644)
 		if err != nil {
 			fmt.Println("Error writing JSON to file:", err)
 			return

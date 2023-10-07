@@ -13,6 +13,6 @@ func main() {
 	if functions.ListCheck(){
 		os.Exit(0)
 	}
-	
+
 	cmd.Execute()
 }
