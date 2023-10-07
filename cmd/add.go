@@ -12,7 +12,7 @@ var addCmd = &cobra.Command{
 	Args:  cobra.ExactArgs(2), // Require exactly one argument (the name)
 	Run: func(cmd *cobra.Command, args []string) {
 		task := args[0]
-		list := ""
+		list := currentState
 
 		if args[1] != "" {
 			list = args[1]
@@ -23,5 +23,8 @@ var addCmd = &cobra.Command{
 }
 
 func init() {
+
+	getState()
+
 	rootCmd.AddCommand(addCmd)
 }

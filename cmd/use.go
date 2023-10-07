@@ -5,13 +5,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var createCmd = &cobra.Command{
-	Use:   "create [name]",
-	Short: "Create new list",
+var useCmd = &cobra.Command{
+	Use:   "use [name]",
+	Short: "Change the list to be used",
 	Run: func(cmd *cobra.Command, args []string) {
 		name := args[0]
 		// Your root command logic here
-		fmt.Printf("The new list \"%s\" has been created\n", name)
+		fmt.Printf("You are now working on \"%s\"\n", name)
 	},
 }
 
@@ -19,5 +19,5 @@ func init() {
 
 	getState()
 
-	rootCmd.AddCommand(createCmd)
+	rootCmd.AddCommand(useCmd)
 }
