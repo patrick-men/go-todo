@@ -28,7 +28,7 @@ func readState() error {
 func getState() {
     // Initialize the state when Cobra commands are executed
     if err := readState(); err != nil {
-        fmt.Println("Error reading state file: DINI MUETEr", err)
-        os.Exit(1)
+        fmt.Println("error reading state file:", err)
+        os.Exit(0)
     }
 }
