@@ -86,6 +86,8 @@ func ListCheck() (b bool) {
 		// Close the file
 		file.Close()
 		b = true
+	} else {
+		b = false
 	}
 	return b
 }
