@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -16,8 +17,6 @@ var useCmd = &cobra.Command{
 }
 
 func init() {
-
-	getState()
 
 	rootCmd.AddCommand(useCmd)
 }

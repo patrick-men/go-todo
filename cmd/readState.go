@@ -3,7 +3,6 @@ package cmd
 import (
     "fmt"
     "os"
-    "os/user"
     "path/filepath"
 )
 
@@ -19,10 +18,10 @@ func readState() error {
 	return nil
 }
 
-func getState() {
+func GetState() {
     // Initialize the state when Cobra commands are executed
     if err := readState(); err != nil {
-        fmt.Println("Error reading state file:", err)
+        fmt.Println("error reading state file: owo", err)
         os.Exit(0)
     }
 }

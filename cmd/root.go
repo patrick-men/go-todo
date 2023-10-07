@@ -2,8 +2,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 )
 
 var rootCmd = &cobra.Command{
@@ -11,13 +12,11 @@ var rootCmd = &cobra.Command{
 	Short: "ToDo CLI tool written in Go",
 	Run: func(cmd *cobra.Command, args []string) {
 		// Your root command logic here
-		fmt.Println("This is a ToDo Tool")
+		fmt.Println(`This is a ToDo Tool`)
 	},
 }
 
 func Execute() {
-
-	getState()
 
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)

@@ -2,17 +2,17 @@
 package main
 
 import (
+	"os"
 	"todo/cmd"
 	"todo/functions"
-	"fmt"
 )
 
 func main() {
 
-	fmt.Println("oops")
-
 	// If default file is created, exit script
-	functions.ListCheck()
+	if functions.ListCheck() {
+		os.Exit(0)
+	}
 
 	
 	cmd.Execute()

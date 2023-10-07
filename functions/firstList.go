@@ -20,7 +20,7 @@ func ListCheck() (b bool) {
 	// Get user 
 	usr, err := user.Current()
 	if err != nil {
-		fmt.Println("Error getting user's home directory:", err)
+		fmt.Println("error getting user's home directory:", err)
 		return
 	}
 
@@ -42,14 +42,14 @@ func ListCheck() (b bool) {
 		// Create directory for tool
 		err = os.MkdirAll(dirPath, 0755)
 		if err != nil {
-			fmt.Println("Error getting user's home directory:", err)
+			fmt.Println("error getting user's home directory:", err)
 			return
 		}
 
 		// Create first default list
 		state, err := os.Create(stateFile)
 		if err != nil {
-			fmt.Println("Error creating state file:", err)
+			fmt.Println("error creating state file:", err)
 			return
 		}
 
@@ -57,7 +57,7 @@ func ListCheck() (b bool) {
 		data := []byte("default.json\n")
 		err = os.WriteFile(stateFile, data, 0644)
 		if err != nil {
-			fmt.Println("Error writing to state file:", err)
+			fmt.Println("error writing to state file:", err)
 			return
 		}
 		state.Close()
@@ -72,14 +72,14 @@ func ListCheck() (b bool) {
 		// Encode default values
 		jsonData, err := json.MarshalIndent(defaultTodoListJson, "", "    ")
 		if err != nil {
-			fmt.Println("Error encoding JSON:", err)
+			fmt.Println("error encoding JSON:", err)
 			return
 		}
 
 		// Write to file
 		err = os.WriteFile(filePath, jsonData, 0644)
 		if err != nil {
-			fmt.Println("Error writing JSON to file:", err)
+			fmt.Println("error writing JSON to file:", err)
 			return
 		}
 

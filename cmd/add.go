@@ -3,6 +3,7 @@ package cmd
 
 import (
 	"fmt"
+
 	"github.com/spf13/cobra"
 )
 
@@ -16,15 +17,12 @@ var addCmd = &cobra.Command{
 
 		if args[1] != "" {
 			list = args[1]
-		} 
+		}
 
 		fmt.Printf("Task %s has been added to %s!\n", task, list)
 	},
 }
 
 func init() {
-
-	getState()
-
 	rootCmd.AddCommand(addCmd)
 }
