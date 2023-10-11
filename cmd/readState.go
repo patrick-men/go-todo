@@ -8,8 +8,9 @@ import (
 
 var currentState string
 
-func readState() error {
-	content, err := os.ReadFile("~/.config/todo/.state.json")
+func readStateFile() error {
+
+	content, err := os.ReadFile(statePath)
     if err != nil {
         return err
     }
@@ -20,8 +21,10 @@ func readState() error {
 
 func GetState() {
     // Initialize the state when Cobra commands are executed
-    if err := readState(); err != nil {
+    if err := readStateFile(); err != nil {
         fmt.Println("error reading state file: owo", err)
         os.Exit(0)
     }
+
+    
 }

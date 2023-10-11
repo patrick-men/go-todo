@@ -3,9 +3,14 @@ package cmd
 import (
 	"fmt"
 	"os"
+	functions "todo/internal"
 
 	"github.com/spf13/cobra"
 )
+
+var dirPath = functions.GetPath("home")
+var filePath = functions.GetPath("file")
+var statePath = functions.GetPath("state")
 
 var rootCmd = &cobra.Command{
 	Use:   "todo",
